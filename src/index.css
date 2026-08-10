@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-growth-mint: #2DD4BF;
+  --color-anchor-deep-indigo: #1E293B;
+  --color-primary: #091426;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1e293b;
+  --color-on-primary-container: #8590a6;
+  --color-secondary: #006a61;
+  --color-[#091426]: #091426;
+  --color-[#1E293B]: #1E293B;
+  --color-[#2DD4BF]: #2DD4BF;
+  --color-[#3B82F6]: #3B82F6;
+  --color-[#E11D48]: #E11D48;
+  --color-info-blue: #3B82F6;
+  --color-error-rose: #E11D48;
+  --color-background: #f8f9ff;
+  --color-surface: #f8f9ff;
+  --color-surface-container: #e5eeff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #dce9ff;
+  --color-on-surface-variant: #45474c;
+  --color-outline-variant: #c5c6cd;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceShort {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.25s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bounce-short {
+  animation: bounceShort 1.5s ease-in-out infinite;
+}
+
+@media print {
+  header, nav, button, .print\:hidden {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
